@@ -1,0 +1,14 @@
+name: housing
+
+entry_points:
+  main:
+    parameters:
+      preprocess_data: {type: string, default: housing}
+      preprocess_downstream: {type: string, default: /opt/data/preprocess/}
+      preprocess_cached_data_id: {type: string, default: ""}
+
+    command: |
+      python -m main \
+        --preprocess_data {preprocess_data} \
+        --preprocess_downstream {preprocess_downstream} \
+        --preprocess_cached_data_id {preprocess_cached_data_id} \

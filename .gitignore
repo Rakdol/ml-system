@@ -1,0 +1,5 @@
+.env
+data/
+mlruns/
+.vscode/
+__pycache__/

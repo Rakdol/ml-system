@@ -1,0 +1,20 @@
+name: housing_preprocess
+
+docker_env:
+  image: ml-system:training_housing_0.0.1
+  volumes: ["$(pwd)/data:/opt/data", $(pwd):/mlflow/projects/code]
+  environment: [["MLFLOW_TRACKING_URI", "http://host.docker.internal:5001"], ["MLFLOW_S3_ENDPOINT_URL", "http://host.docker.internal:9000"], ["AWS_ACCESS_KEY_ID", "minio"], ["AWS_SECRET_ACCESS_KEY", "miniostorage"],]
+    
+
+entry_points:
+  preprocess:
+    parameters:
+      data: {type: string, default: housing}
+      downstream: {type: string, default: /opt/data/preprocess/}
+      cached_data_id: {type: string, default: ""}
+
+    command: |
+      python -m src.preprocess \
+        --data {data} \
+        --downstream {downstream} \
+        --cached_data_id {cached_data_id} 
