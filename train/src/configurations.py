@@ -26,5 +26,13 @@ class PreprocessConfigurations(object):
         "Longitude",
     ]
     target_names = ["MedHouseVal"]
-    n_inputs = 8
     scaler = "standard"
+
+    train_prefix = "train"
+    train_file_name = "housing_train.csv"
+    valid_prefix = "valid"
+    valid_file_name = "housing_valid.csv"
+    test_prefix = "test"
+    test_file_name = "housing_test.csv"
+    scaler_prefix = "scaler"
+    scaler_name = "standard_scaler.pkl"
