@@ -4,17 +4,8 @@ import os
 import mlflow
 
 
-os.environ["MLFLOW_S3_ENDPOINT_URL"] = "http://localhost:9000"
-os.environ["MLFLOW_TRACKING_URI"] = "http://localhost:5001"
-os.environ["AWS_ACCESS_KEY_ID"] = "minio"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "miniostorage"
-
 def main():
 
-    # MLflow Tracking URI 명시적으로 설정
-    # mlflow.set_tracking_uri(os.getenv["MLFLOW_TRACKING_URI"])
-
-    # 트래킹 URI가 제대로 설정되었는지 확인
     print("Tracking URI: ", mlflow.get_tracking_uri())
 
     parser = ArgumentParser(
@@ -59,11 +50,10 @@ def main():
                 "data": args.preprocess_data,
                 "downstream": args.preprocess_downstream,
                 "cached_data_id": args.preprocess_cached_data_id,
-            }
+            },
         )
         preprocess_run = mlflow.tracking.MlflowClient().get_run(preprocess_run.run_id)
 
 
 if __name__ == "__main__":
     main()
-
