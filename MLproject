@@ -11,4 +11,4 @@ entry_points:
       python -m main \
         --preprocess_data {preprocess_data} \
         --preprocess_downstream {preprocess_downstream} \
-        --preprocess_cached_data_id {preprocess_cached_data_id} \
+        --preprocess_cached_data_id {preprocess_cached_data_id}
