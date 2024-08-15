@@ -52,7 +52,7 @@ class HousingDataset(object):
         n_readers=5,
         n_read_threads=None,
         n_parse_threads=5,
-        shuffle_buffer_size=10_000,
+        shuffle_buffer_size=15_000,
         seed=42,
         batch_size=32,
     ):
