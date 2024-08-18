@@ -1,7 +1,7 @@
 FROM python:3.9-buster
 
-ENV PROJECT_DIR /mlflow/projects
-ENV CODE_DIR /mlflow/projects/code
+ENV PROJECT_DIR=/mlflow/projects
+ENV CODE_DIR=/mlflow/projects/code
 WORKDIR /${PROJECT_DIR}
 
 COPY requirements.txt /${PROJECT_DIR}/requirements.txt
