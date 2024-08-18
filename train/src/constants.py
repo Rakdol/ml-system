@@ -12,6 +12,14 @@ class PLATFORM_ENUM(enum.Enum):
         return item in [v.value for v in PLATFORM_ENUM.__members__.values()]
 
 
+class MODEL_ENUM(enum.Enum):
+    SIMPLE_MODEL = "simple"
+
+    @staticmethod
+    def has_value(item):
+        return item in [v.value for v in MODEL_ENUM.__members__.values()]
+
+
 def constant(f):
     def fset(self, value):
         raise TypeError

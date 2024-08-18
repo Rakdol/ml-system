@@ -14,7 +14,7 @@ class PlatformConfigurations:
         )
 
 
-class PreprocessConfigurations(object):
+class TrainConfigurations(object):
     feature_names = [
         "MedInc",
         "HouseAge",
