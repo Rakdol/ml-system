@@ -14,7 +14,7 @@ dev:
 .PHONY: d_build
 d_build:
 	docker build \
-		-t $(BASE_IMAGE_NAME):$(TRAINING_PATTERN)_$(TRAINING_PROJECT)_$(IMAGE_VERSION) \
+		--no-cache -t $(BASE_IMAGE_NAME):$(TRAINING_PATTERN)_$(TRAINING_PROJECT)_$(IMAGE_VERSION) \
 		-f $(DOCKERFILE) .
 
 .PHONY: train
